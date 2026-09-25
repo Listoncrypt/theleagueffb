@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Newsreader", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-canvas: #090908;
+  --color-canvas-alt: #121210;
+  --color-canvas-card: #181816;
+  --color-surface-glass: rgba(18, 18, 16, 0.72);
+  --color-charcoal: #F5F3ED;
+  --color-stone-muted: #9E9B92;
+  --color-stone-border: #292825;
+  --color-stone-dark-border: #1F1E1C;
+  --color-amber-accent: #C68A4C;
+  --color-amber-accent-hover: #DF9F5B;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-canvas);
+    color: var(--color-charcoal);
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+  }
+}
+
+/* Global Cinematic Background System */
+.league-bg-container {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.league-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  opacity: 0.38;
+  filter: contrast(1.12) saturate(0.95);
+  transform: scale(1.02);
+  will-change: transform;
+}
+
+.league-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 25%, rgba(9, 9, 8, 0.4) 0%, rgba(9, 9, 8, 0.88) 60%, #090908 100%),
+              linear-gradient(to bottom, rgba(9, 9, 8, 0.5) 0%, rgba(9, 9, 8, 0.82) 40%, rgba(9, 9, 8, 0.96) 80%, #090908 100%);
+}
+
+/* Glass Card & Border Surfaces */
+.surface-glass {
+  background-color: rgba(18, 18, 16, 0.68);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.surface-glass-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.surface-glass-hover:hover {
+  background-color: rgba(28, 28, 25, 0.82);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+/* Editorial Drop Cap utility */
+.editorial-dropcap::first-letter {
+  font-family: var(--font-serif);
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.85;
+  padding-top: 4px;
+  padding-right: 12px;
+  padding-bottom: 2px;
+  color: #F5F3ED;
+}
+
+/* Hairline rule */
+.hairline-b {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hairline-t {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hairline-r {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hairline-l {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}

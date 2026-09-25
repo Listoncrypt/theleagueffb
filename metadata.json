@@ -1,0 +1,6 @@
+{
+  "name": "The League FFB",
+  "description": "All Things Dynasty Fantasy Football & NFL. Editorial analysis, rookie draft kit, team reviews, podcasts, and community discussions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
